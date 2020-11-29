@@ -1,0 +1,36 @@
+{{#if length}}
+<h3 class="center">
+	{{length}} have been applied to your job
+</h3>
+<div class="row">
+	{{#each jobs}}
+	<div class="col s12 l6" style="margin-top: 20px;">
+		<div class="card" style='background: whitesmoke; padding: 10px;border-radius: 10px; border: 1px solid grey;'>
+			<span class="card-title">
+				Applied for {{this.jobId.jobTitle}}
+			</span>
+			<h6>
+				{{this.userId.email}} - {{this.fullname}}
+				<br>
+				Speacilization - {{this.speacilization}}, Education - {{this.education}}
+			</h6>
+			<a href="{{this.resume}}" target="__blank">
+				View resume
+			</a>
+
+			<p>
+				Applied at: {{this.createdAt}}
+			</p>
+		</div>
+	</div>
+	{{/each}}
+</div>
+{{else}}
+<div class="container-fluid" style="background: whitesmoke; padding: 20px;">
+	<div class="center container">
+		<h3>
+			No candidate is appying here for your company till now
+		</h3>
+	</div>
+</div>
+{{/if}}
